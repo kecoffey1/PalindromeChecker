@@ -14,9 +14,29 @@ public void setup()
     }
   }
 }
+public String ns(String word) {
+  String x = "";
+  for (int i = 0; i < word.length() ; i ++) {
+    if (word.charAt(i) != ' ') {
+    x += word.substring(i,i+1).toLowerCase();
+    
+    }
+    
+  }
+ 
+  return x; 
+}
 public boolean palindrome(String word)
 {
-  //your code here
+  String y = ns(word); 
+  String x = ""; 
+  for (int i = y.length()/2-1; i >=  0; i --) {
+    x += y.charAt(i); 
+  }
+  if (x.equals(word.substring(word.length()/2+1))) { 
+      return true;
+  }
+ 
   return false;
 }
 public String reverse(String str)
@@ -25,5 +45,3 @@ public String reverse(String str)
     //your code here
     return sNew;
 }
-
-
